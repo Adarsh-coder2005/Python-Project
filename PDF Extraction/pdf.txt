@@ -1,0 +1,826 @@
+ 
+REPORT
+ 
+On
+ 
+DESIGN AND IMPLEMENTATION OF
+ 
+BANKING SYSTEM
+ 
+ 
+By
+ 
+ADARSH SINGH NISHEN 1961055
+ 
+SARTHAK SWAPNIL DUBEY 1961056
+ 
+REHMAN AHMAD 1961057
+ 
+JOSNA MARIA JOSE 1961058
+ 
+ 
+CONTENTS
+ 
+ 
+Introduction
+ 
+ER Diagram
+ 
+o
+ 
+Description
+ 
+o
+ 
+Entities and Attributes
+ 
+o
+ 
+Relationships
+ 
+o
+ 
+ER Diagram
+ 
+ 
+ER Diagram converted into relations
+ 
+o
+ 
+Table Description
+ 
+ 
+Data in Tables
+ 
+ 
+Possible Queries to show the working of the System
+ 
+ 
+Front End
+ 
+ 
+References
+BANKING SYS
+T
+E
+M
+ 
+4
+ 
+| 
+Page
+ 
+ 
+INTRODUCTION
+ 
+B
+anking is one of the most regulated businesses in the world. It is vital system for developing 
+economy for the nation. 
+ 
+It
+ 
+is the place where customers feel the sense of safety for their property. In the bank,
+ 
+customers deposit and withdraw their money. T
+ransaction of money also is a part where
+ 
+customer takes shelter of the bank. Now to keep the belief and trust of customers, there is the
+ 
+positive need for management of the bank, which can handle all this with comfort and ease.
+ 
+Smooth and efficient managem
+ent affects the satisfaction of the customers and staff
+ 
+members, indirectly. And of course, it encourages management committee in taking some
+ 
+needed decision for future enhancement of the bank.
+ 
+ 
+ABOUT THE PROJEC
+T
+ 
+The project that we have 
+undertaken aims to develop a banking system that is clean, user
+-
+friendly and multi
+-
+functional. Development of this application includes a number of fields such 
+
+S
+
+ 
+
+ 
+Create an account: A user can create an account by providing the name of the account 
+holder, account number, select amount type whether its Saving account or Current 
+account and providing an initial amount.
+ 
+
+ 
+De
+posit amount: The user can deposit money just by providing his/her account, then the 
+system displays his/her profile and entering an amount. 
+ 
+
+ 
+Withdraw amount: The user can also withdraw money just by providing his/her account, 
+then the system displays his/
+her profile and entering an amount. 
+ 
+
+ 
+Balance Enquiry: For certain purpose, he/she can also check for the balance inquiry 
+
+ 
+
+ 
+
+
+Another feature is that the user can also close their account by providing their account 
+number and he/she can modify their account detail and type if they want to.
+ 
+ 
+RULES GOVERNING THE PROJECT
+ 
+
+ 
+All the customers of the bank h
+ave a 
+unique
+ 
+account number.
+ 
+
+ 
+The account numbers are not nullable i.e., they cannot take 
+null 
+values.
+ 
+
+ 
+A person is eligible to get a loan from the bank if he has an account in the bank.
+ 
+
+ 
+The percentage of interest imposed on the loan depends on the 
+
+ 
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+5
+ 
+| 
+Page
+ 
+ 
+ER Diagram
+ 
+ 
+ER diagram of Bank has the following description :
+ 
+
+ 
+Bank have Customer.
+ 
+
+ 
+Banks are identified by a name, code, address of main office.
+ 
+
+ 
+Banks have branches.
+ 
+
+ 
+Branches are identified by a branch_no., branch_name, 
+address.
+ 
+
+ 
+Customers are identified by name, cust
+-
+id, phone number, address.
+ 
+
+ 
+Customer can have one or more accounts.
+ 
+
+ 
+Accounts are identified by acc_no., acc_type, balance.
+ 
+
+ 
+Customer can avail loans.
+ 
+
+ 
+Loans are identified by loan_id, loan_type and 
+amount.
+ 
+
+ 
+
+ 
+ 
+ 
+Entities and their Attributes are :
+ 
+Bank Entity
+ 
+: Attributes of Bank Entity are Bank Name, Code and Address.
+ 
+Code is Primary Key for Bank Entity.
+ 
+Customer Entity
+ 
+: Attributes of Customer Entity are 
+Customer_id, Name, Phone Number and 
+Address.
+ 
+Customer_id is Primary Key for Customer Entity.
+ 
+Branch Entity
+ 
+: Attributes of Branch Entity are Branch_id, Name and Address.
+ 
+Branch_id is Primary Key for Branch Entity.
+ 
+Account Entity
+ 
+: Attributes of Account Ent
+ity are Account_number, Account_Type and 
+Balance.
+ 
+Account_number is Primary Key for Account Entity.
+ 
+Loan Entity
+ 
+: Attributes of Loan Entity are Loan_id, Loan_Type and Amount.
+ 
+Loan_id is Primary Key for Loan Entity.
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+6
+ 
+| 
+Page
+ 
+ 
+Relationships are :
+ 
+Bank has 
+Branches => 1 : N
+ 
+One Bank can have many Branches but one Branch can not belong to many Banks, so the 
+relationship between Bank and Branch is one to many relationship.
+ 
+Branch maintain Accounts => 1 : N
+ 
+One Branch can have many Accounts but one 
+Account can not belong to many Branches, so the 
+relationship between Branch and Account is one to many relationship.
+ 
+Branch offer Loans => 1 : N
+ 
+One Branch can have many Loans but one Loan can not belong to many Branches, so the 
+relationship between Branch
+ 
+and Loan is one to many relationship.
+ 
+Account held by Customers => M : N
+ 
+One Customer can have more than one Accounts and also One Account can be held by one or 
+more Customers, so the relationship between Account and Customers is many to many 
+relationship
+.
+ 
+Loan availed by Customer => M : N
+ 
+(Assume loan can be jointly held by many Customers).
+ 
+One Customer can have more than one Loans and also One Loan can be availed by one or more 
+Customers, so the relationship between Loan and Customers is many to many rel
+ationship.
+ 
+ 
+The following bank ER diagram illustrates key information about bank, including entities such as 
+branches, customers, accounts, and loans. It allows us to understand the relationships between 
+entities.
+ 
+BANKING SYS
+T
+E
+M
+ 
+7
+ 
+| 
+Page
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+8
+ 
+| 
+Page
+ 
+ 
+ER Diagram Converted into Relations
+ 
+ 
+TA
+BLE DESCRIPTION
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+9
+ 
+| 
+Page
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+10
+ 
+| 
+Page
+ 
+ 
+DATA IN TABLES
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+11
+ 
+| 
+Page
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+12
+ 
+| 
+Page
+ 
+ 
+ 
+POSSIBLE 
+QUERIES
+ 
+TO SHOW THE WORKING OF THE SYSTEM
+ 
+ 
+1.
+ 
+Selecting customer with minimum balance
+ 
+SELECT * FROM CUSTOMER, ACCOUNT
+ 
+WHERE ACCOUNT.BALANCE = 
+ 
+(
+ 
+SELECT MIN(BALANCE) FROM ACCOUNT
+ 
+)
+ 
+AND 
+CUSTOMER.CUS_ID=ACCOUNT.CUS_ID;
+ 
+ 
+2.
+ 
+Selecting customer with m
+axi
+mum balance
+ 
+SELECT * FROM CUSTOMER, ACCOUNT
+ 
+WHERE ACCOUNT.BALANCE = 
+ 
+(
+ 
+SELECT 
+MAX 
+(BALANCE) FROM ACCOUNT
+ 
+)
+ 
+AND CUSTOMER.CUS_ID=ACCOUNT.CUS_ID;
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+13
+ 
+| 
+Page
+ 
+ 
+3.
+ 
+Selecting loans taken by each customer
+ 
+SELECT CUS_ID, LOAN.NAME, ADDRESS, LOAN_ID, LOAN_TYPE, 
+AMOUNT
+ 
+FROM CUSTOMER, LOAN
+ 
+WHERE CUSTOMER.NAME = LOAN.NAME;
+ 
+ 
+ 
+ 
+4.
+ 
+Selecting 
+deposit accounts
+ 
+SELECT * FROM ACCOUNT
+ 
+
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+14
+ 
+| 
+Page
+ 
+ 
+ 
+5.
+ 
+Selecting customers with account balance more 
+than 30000
+ 
+SELECT * FROM CUSTOMER, ACCOUNT
+ 
+WHERE BALANCE>30000 AND 
+ACCOUNT.CUS_ID=CUSTOMER.CUS_ID;
+ 
+ 
+ 
+ 
+ 
+ 
+6.
+ 
+SELECT  * FROM BANK.BRANCH
+ 
+WHERE BANK.CODE=BRANCH.CODE;
+ 
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+15
+ 
+| 
+Page
+ 
+ 
+7.
+ 
+Selecting customers with loan greater than 70000
+ 
+SELECT CUS_ID, CUSTOMER.NAME, PHONE, ADDRESS, LOAN_ID, 
+LOAN_TYPE, AMOUNT 
+ 
+FROM LOAN, CUSTOMER
+ 
+WHERE CUSTOMER.NAME=LOAN.NAME AND AMOUNT>70000;
+ 
+ 
+ 
+ 
+ 
+ 
+8.
+ 
+Selecting all details of all customers
+ 
+SELECT * FROM CUSTOMER, BANK, ACCOUNT, BRANCH
+ 
+WHERE ACCOUNT.CUS_ID = CUSTOMER.CUS_ID 
+ 
+AND BRANCH.BRANCH_ID=ACCOUNT.BRANCH_ID
+ 
+AND BRANCH.CODE=BANK.CODE
+;
+ 
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+16
+ 
+| 
+Page
+ 
+ 
+9.
+ 
+Transanction to update balance of Customers with Account number 4855 
+and 1710.
+ 
+BEGIN;
+ 
+UPDATE ACCOUNT
+ 
+SET
+ 
+BALANCE=BALANCE
+-
+1000
+ 
+WHERE ACCOUNT_NO=485
+5;
+ 
+UPDATE ACCOUNT
+ 
+SET
+ 
+BALANCE=BALANCE+1000
+ 
+WHERE ACCOUNT_NO=1710;
+ 
+COMMIT;
+ 
+SELECT * FROM ACCOUNT;
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+17
+ 
+| 
+Page
+ 
+ 
+10.
+ 
+Transaction to update balance of one customer and delete account of 
+another customer
+ 
+ 
+BEGIN;
+ 
+ 
+UPDATE ACCOUNT
+ 
+ 
+SET
+ 
+BALANCE=BALANCE
+ 
++
+ 
+(
+ 
+ 
+ 
+ 
+ 
+SELECT 
+BALANCE FROM ACCOUNT
+ 
+ 
+ 
+ 
+ 
+WHERE ACCOUNT_NO=2911
+ 
+ 
+ 
+ 
+     
+)
+ 
+WHERE ACCOUNT_NO = 2662;
+ 
+DELETE FROM ACCOUNT WHERE ACCOUNT_NO=2911;
+ 
+COMMIT;
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+18
+ 
+| 
+Page
+ 
+ 
+FRONT END
+ 
+
+ 
+Here the user can perform all the tasks like creating an account, deposit amount, withdraw 
+
+ccount. 
+ 
+
+ 
+ 
+Synopsis
+ 
+Project Name: Banking System = C++ + SQL
+ 
+Features:
+ 
+1.Create an account
+: A 
+user can create an account by providing the name of the account holder, 
+account number, select amount type whether its Sa
+ving account or Current account and 
+providing an initial amount.
+ 
+2.Deposit amount
+: 
+The user can deposit money just by providing his/her account, then the system 
+displays his/her profile and entering an amount. 
+ 
+3.Withdraw amount
+: 
+The user can also withdraw
+ 
+money just by providing his/her account, then 
+the system displays his/her profile and entering an amount. 
+ 
+4.Balance Enquiry
+: 
+For certain purpose, he/she can also check for the balance inquiry which 
+
+ 
+
+: 
+
+feature is th
+at the user can also close their account by providing their account number and he/she 
+can modify their account detail and type if they want to.
+ 
+ 
+C++:
+ 
+1.Classes
+ 
+2.File Handling
+ 
+
+ 
+the system, so every 
+time we get into the system we can operate with the existing accounts. 
+ 
+Bank System is developed using C++ Programming Language and different variables, strings 
+have been used for the development of it. 
+ 
+BANKING SYS
+T
+E
+M
+ 
+19
+ 
+| 
+Page
+ 
+ 
+ 
+Recommended IDEs:
+ 
+1.Dev 
+C++
+ 
+2.Code Blocks
+ 
+Software Requirements:
+ 
+1. C++
+ 
+2. SQL
+ 
+ 
+Hardware Requirements:
+ 
+1. Processor: 1.8 GHz or faster
+ 
+2. RAM: 2 GB of RAM; 8 GB of RAM recommended (2.5 GB minimum if running on a virtual 
+machine)
+ 
+3. Hard disk space: Minimum of 800MB up to 210 GB o
+f available space, depending on features 
+installed; typical installations require 20
+-
+50 GB of free space.
+ 
+ 
+ 
+BANKING SYS
+T
+E
+M
+ 
+20
+ 
+| 
+Page
+ 
+ 
+REFERENCES
+ 
+ 
+https://www.slideshare.net/unsajawaid/docu
+mentation
+-
+on
+-
+bank
+-
+management
+-
+system
+ 
+https://www.researchgate.net/publication/301293322_Bank_Account_Management_System
+ 
+ 
+ 
+ 
